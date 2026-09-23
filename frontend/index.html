@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>XENOZ | Voice-Native Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                X
+            </div>
+
+            <div>
+                <h2>XENOZ</h2>
+                <span>Voice Assistant</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#dashboard" class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#commands" class="nav-item">
+                <span>◉</span>
+                Commands
+            </a>
+
+            <a href="#reminders" class="nav-item">
+                <span>◷</span>
+                Reminders
+            </a>
+
+            <a href="#notes" class="nav-item">
+                <span>□</span>
+                Notes
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-status">
+
+            <div class="status-dot"></div>
+
+            <div>
+                <strong>System Online</strong>
+                <span>Local connection active</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main class="main-content" id="dashboard">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    PERSONAL ASSISTANT
+                </p>
+
+                <h1>
+                    Welcome to XENOZ
+                </h1>
+
+                <p class="subtitle">
+                    Your voice-native personal assistant.
+                </p>
+
+            </div>
+
+
+            <div class="header-time">
+
+                <span>LOCAL TIME</span>
+
+                <strong id="systemTime">
+                    --:--
+                </strong>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==============================
+             ASSISTANT
+        =============================== -->
+
+        <section class="assistant-card">
+
+
+            <div class="orb-container">
+
+                <div class="orb">
+
+                    <div class="orb-inner">
+                        X
+                    </div>
+
+                </div>
+
+                <div class="orb-ring"></div>
+
+            </div>
+
+
+            <div class="assistant-info">
+
+                <span class="online-label">
+                    ● XENOZ ONLINE
+                </span>
+
+                <h2>
+                    How can I help you?
+                </h2>
+
+                <p>
+                    Type a command or use your voice
+                    to interact with XENOZ.
+                </p>
+
+            </div>
+
+
+            <!-- COMMAND INPUT -->
+
+            <div class="command-container">
+
+                <input
+                    type="text"
+                    id="commandInput"
+                    placeholder="Type a command..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    id="micButton"
+                    class="mic-button"
+                    type="button"
+                >
+                    🎤
+                </button>
+
+
+                <button
+                    id="sendButton"
+                    class="send-button"
+                    type="button"
+                >
+                    Send
+                </button>
+
+            </div>
+
+
+            <div class="connection-status">
+
+                <span id="connectionStatus">
+                    Connected
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             RESPONSE
+        =============================== -->
+
+        <section class="response-card">
+
+            <div class="response-header">
+
+                <span>
+                    XENOZ RESPONSE
+                </span>
+
+                <span class="response-indicator">
+                    ●
+                </span>
+
+            </div>
+
+
+            <div class="response-content">
+
+                <p id="responseText">
+                    XENOZ is ready.
+                    Give me a command to get started.
+                </p>
+
+                <span id="responseCommand">
+                    Waiting for command...
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             COMMAND HISTORY
+        =============================== -->
+
+        <section class="history-section" id="commands">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        ACTIVITY
+                    </p>
+
+                    <h2>
+                        Recent Commands
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="commandHistory"
+                class="command-history"
+            >
+
+                <div class="empty-history">
+
+                    <div class="empty-icon">
+                        ◌
+                    </div>
+
+                    <p>
+                        No commands yet.
+                    </p>
+
+                    <span>
+                        Your recent XENOZ interactions
+                        will appear here.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             SAVED NOTES & REMINDERS
+        =============================== -->
+
+        <section class="saved-section" id="reminders">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        MEMORY
+                    </p>
+
+                    <h2>
+                        Saved Notes &amp; Reminders
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="saved-grid">
+
+
+                <!-- NOTES -->
+
+                <div class="saved-card" id="notes">
+
+                    <div class="saved-card-header">
+
+                        <h3>
+                            📝 Notes
+                        </h3>
+
+                        <span
+                            class="saved-count"
+                            id="notesCount"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div id="notesList">
+
+                        <p class="empty-saved">
+                            No notes yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REMINDERS -->
+
+                <div class="saved-card">
+
+                    <div class="saved-card-header">
+
+                        <h3>
+                            ⏰ Reminders
+                        </h3>
+
+                        <span
+                            class="saved-count"
+                            id="remindersCount"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div id="remindersList">
+
+                        <p class="empty-saved">
+                            No reminders yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             FOOTER
+        =============================== -->
+
+        <footer class="footer">
+
+            <span>
+                XENOZ Software Prototype
+            </span>
+
+            <span>
+                FastAPI • Browser Speech Recognition
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- IMPORTANT:
+         JavaScript must be loaded here,
+         AFTER the HTML elements above.
+    -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
